@@ -4,7 +4,7 @@ import FeaturedSection from '../Components/FeaturedSection'
 import Banner from '../Components/Banner'
 import Testimonial from '../Components/Testimonial'
 import Newsletter from '../Components/Newsletter'
-import Footer from '../Components/Footer'
+// import Footer from '../Components/Footer'
 import AboutUs from '../Components/AboutUs'
 import Hero from '../components/Hero'
 

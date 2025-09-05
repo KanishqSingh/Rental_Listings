@@ -1,5 +1,5 @@
 
-import Navbar from './components/Navbar'
+import Navbar from './Components/Navbar'
 import { Route, Routes, useLocation } from 'react-router'
 import Home from './pages/Home'
 import MyBookings from './Pages/MyBookings'
