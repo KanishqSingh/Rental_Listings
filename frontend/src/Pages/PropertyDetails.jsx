@@ -7,39 +7,63 @@ import toast from 'react-hot-toast';
 
 const PropertyDetails = () => {
   const { id } = useParams();
-  const {properties,axios,startDate,setStartDate,
-        returnDate,setReturnDate} = useAppContext();
+  const { properties, axios, startDate, setStartDate,
+    returnDate, setReturnDate } = useAppContext();
   const navigate = useNavigate();
   const [property, setProperty] = useState(null);
+  const [review, setReview] = useState('');
+  const [comments, setComments] = useState('');
+  const [newReview, setNewReview] = useState('');
 
-  const handleSubmit = async(e)=>{
+  
+
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const {data} = await axios.post('/api/bookings/create',{
-        property:id,
+      const { data } = await axios.post('/api/bookings/create', {
+        property: id,
         startDate,
         returnDate
       })
 
-      if(data.success){
+      if (data.success) {
         toast.success(data.message);
         navigate('/my-bookings')
-      }else{
+      } else {
         toast.error(data.message)
       }
-      
+
     } catch (error) {
       console.log(error);
       toast.error(error.message)
-      
-      
+
+
     }
 
   }
 
+  // const handleReviews = () =>{
+
+  //   try {
+  //         const {data} = axios.post('/api/user/review',{review,comments})
+  //   if(data.success){
+  //     setNewReview(data)
+  //     setReview('')
+  //     setComments('')
+  //   }else{
+  //     toast.error(data.message)
+  //   }
+  //   } catch (error) {
+  //     toast.error(error.message)
+  //   }
+
+  // }
+
   useEffect(() => {
     setProperty(properties.find((p) => p._id === id));
-  }, [properties,id]);
+  }, [properties, id]);
 
   return property ? (
     <div className='px-6 mb-15 md:px-16 lg:px-24 xl:px-32 mt-20 text-gray-800 font-sans'>
@@ -149,8 +173,8 @@ const PropertyDetails = () => {
           <div className='flex flex-col gap-2'>
             <label htmlFor="pickup-date" className='text-sm font-medium'>Rent Start Date</label>
             <input
-            value={startDate}
-            onChange={(e)=>setStartDate(e.target.value)}
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
               type="date"
               required
               id="pickup-date"
@@ -163,8 +187,8 @@ const PropertyDetails = () => {
           <div className='flex flex-col gap-2'>
             <label htmlFor="return-date" className='text-sm font-medium'>Rent End Date</label>
             <input
-             value={returnDate}
-            onChange={(e)=>setReturnDate(e.target.value)}
+              value={returnDate}
+              onChange={(e) => setReturnDate(e.target.value)}
               type="date"
               required
               id="return-date"
@@ -185,7 +209,15 @@ const PropertyDetails = () => {
           </p>
         </form>
       </div>
-    </div>
+      {/* <div>
+        <form onSubmit={handleReviews}>
+          <input type="text" placeholder='rate out of  /5' className='border-2' onChange={(e) => setReview(e.target.value)} />
+          <textarea name="comment" id="" placeholder='enter comments' className='border-2' onChange={(e) => setComments(e.target.value)} ></textarea>
+          <button type='submit'>Submit</button>
+        </form>
+      </div> */}
+
+    </div >
   ) : (
     <Loader />
   );
