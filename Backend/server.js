@@ -8,20 +8,24 @@ import userRouter from './routes/userRoutes.js';
 
 const app = express();
 
-//always import from db.js not db
+// Always import from db.js, not db
 await connextDB();
 
-//middleware
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-app.get('/',(req,res)=>res.send("Server is running"))
+app.get('/', (req, res) => res.send("Server is running"));
 
-//routes
-app.use('/api/user',userRouter)
-app.use('/api/owner',ownerRouter)
-app.use('/api/bookings',bookingRouter)
+// Routes
+app.use('/api/user', userRouter);
+app.use('/api/owner', ownerRouter);
+app.use('/api/bookings', bookingRouter);
 
+// Use Render's dynamic port
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT,()=>console.log("Server started on port 5000"));
+// Bind to 0.0.0.0 instead of localhost
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`✅ Server started on port ${PORT}`);
+});
