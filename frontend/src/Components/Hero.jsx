@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <div
       className="relative min-h-screen flex flex-col items-center justify-center px-4 py-10 md:py-20 text-center m-4  shadow-lg shadow-amber-950"
-      style={{ backgroundImage: `url(${assets.herobanner1})`, backgroundSize: "cover", backgroundPosition: "center", }}
+      style={{ backgroundImage: `url(${assets.heroBanner1})`, backgroundSize: "cover", backgroundPosition: "center", }}
     >
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-black/50"></div>

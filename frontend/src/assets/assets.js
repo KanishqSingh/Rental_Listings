@@ -36,7 +36,7 @@ import testimonial_image_2 from "./testimonial_image_2.png"
 import user_profile from "./user_profile.png"
 import upload_icon from "./upload_icon.svg"
 import Logo from "./Logo.png"
-import herobanner1 from "./herobanner1.png"
+import heroBanner1 from "./herobanner1.png"
 import animatedhouse from "./animatedhouse.png"
 import animatedhouse1 from "./animatedhouse1.png"
 import aboutus from "./aboutus.png"
@@ -87,7 +87,7 @@ export const assets = {
     user_profile,
 
     Logo,
-    herobanner1,
+    heroBanner1,
     animatedhouse,
     animatedhouse1,
     aboutcontact,
