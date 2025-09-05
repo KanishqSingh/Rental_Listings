@@ -1,19 +1,20 @@
 
 import Navbar from './Components/Navbar'
 import { Route, Routes, useLocation } from 'react-router'
-import Home from './pages/Home'
-import MyBookings from './Pages/MyBookings'
+
+import MyBookings from './pages/MyBookings'
 import Footer from './Components/Footer'
-import Layout from './Pages/Owner/Layout'
-import DashBoard from './Pages/Owner/DashBoard'
-import ManageBooking from './Pages/Owner/ManageBooking'
+import Layout from './pages/Owner/Layout'
+import DashBoard from './pages/Owner/DashBoard'
+import ManageBooking from './pages/Owner/ManageBooking'
 import Login from './Components/Login'
 import {Toaster} from 'react-hot-toast'
 import { useAppContext } from './context/AppContext'
-import Properties from './Pages/Properties'
-import PropertyDetails from './Pages/PropertyDetails'
-import AddProperty from './Pages/Owner/AddProperty'
-import ManageProperty from './Pages/Owner/ManageProperty'
+import Properties from './pages/Properties'
+import PropertyDetails from './pages/PropertyDetails'
+import AddProperty from './pages/Owner/AddProperty'
+import ManageProperty from './pages/Owner/ManageProperty'
+import Home from './pages/Home'
 
 const App = () => {
 
