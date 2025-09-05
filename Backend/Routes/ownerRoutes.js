@@ -13,4 +13,6 @@ ownerRouter.post('/update-image',upload.single('image'),protect,updateUserImage)
 ownerRouter.post('/toggle-property',protect,togglePropertyAvailabilty)
 ownerRouter.post('/delete-property',protect,deleteProperty)
 
+// hello there
+
 export default ownerRouter;
