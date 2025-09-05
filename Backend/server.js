@@ -4,7 +4,8 @@ import cors from 'cors';
 import connextDB from './configs/db.js';
 import ownerRouter from './Routes/ownerRoutes.js';
 import bookingRouter from './Routes/bookingRoutes.js';
-import userRouter from './routes/userRoutes.js';
+import userRouter from './Routes/userRoutes.js'
+
 
 const app = express();
 
